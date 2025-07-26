@@ -115,3 +115,7 @@ Execute the test suite to verify correctness of all operations, including insert
 ```bash
 python -m unittest tests.py
 ```
+
+## 📄 License
+
+[MIT](LICENSE) © 2025 Arkadiy Panov
