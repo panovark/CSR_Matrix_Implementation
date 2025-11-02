@@ -1,4 +1,3 @@
-
 # CSRMatrix
 
 ## Overview
@@ -25,19 +24,20 @@ This project provides a Python implementation of the Compressed Sparse Row (CSR)
 .
 ├── main.py             # Implements the CSRMatrix class and its methods.
 ├── tests.py            # Contains unittest cases to validate all functionality.
-└── using_example.py    # Demonstrates typical usage scenarios and prints results to the console.
+├── using_example.py    # Demonstrates typical usage scenarios and prints results to the console.
+└── .gitignore          # Git ignore file for Python projects.
 ```
 
-> *Note: Ensure all files are located in the same directory before running any scripts.*
+> _Note: Ensure all files are located in the same directory before running any scripts._
 
 ## Requirements
 
-- Python 3.6 or higher  
+- Python 3.6 or higher
 - No external dependencies (uses only Python’s standard library)
 
 ## Installation & Setup
 
-1. Clone or download the repository into a single folder.  
+1. Clone or download the repository into a single folder.
 2. (Optional) Create and activate a virtual environment:
    ```bash
    python3 -m venv venv
@@ -50,13 +50,13 @@ This project provides a Python implementation of the Compressed Sparse Row (CSR)
 ### Running the Example Script
 
 ```bash
-python using_example.py
+python3 using_example.py
 ```
 
 This will:
 
-1. Create and populate a few sample matrices and a vector.  
-2. Display each in dense format.  
+1. Create and populate a few sample matrices and a vector.
+2. Display each in dense format.
 3. Perform and display results of scalar multiplication, matrix-vector and matrix-matrix multiplication, and matrix addition.
 
 ### API Reference
@@ -64,27 +64,35 @@ This will:
 Below is a summary of the `CSRMatrix` class methods:
 
 - `CSRMatrix(num_rows: int, num_cols: int)`
+
   - Initialize an empty CSR matrix with the given dimensions.
 
 - `insert(row: int, col: int, value: float) -> None`
+
   - Insert, update, or delete (if `value==0`) a non-zero element. Raises `ValueError` if indices are out of bounds.
 
 - `get_value(row: int, col: int) -> float`
+
   - Retrieve the value at `(row, col)`, returning 0.0 if not explicitly stored.
 
 - `is_vector() -> bool`
+
   - Returns `True` if the matrix has exactly one column.
 
 - `multiply_scalar(scalar: float) -> CSRMatrix`
+
   - Returns a new CSR matrix scaled by the given scalar.
 
 - `multiply_vector(vector: CSRMatrix) -> CSRMatrix`
+
   - Multiplies the matrix by a vector (CSR with one column). Raises `ValueError` if dimensions mismatch or operand is not a vector.
 
 - `multiply_matrix(other: CSRMatrix) -> CSRMatrix`
+
   - Matrix-matrix multiplication. Raises `ValueError` on dimension mismatch.
 
 - `add_matrix(other: CSRMatrix) -> CSRMatrix`
+
   - Element-wise addition of two matrices. Raises `ValueError` if dimensions differ.
 
 - `print_dense_from_csr() -> None`
@@ -113,7 +121,7 @@ I.print_dense_from_csr()
 Execute the test suite to verify correctness of all operations, including insertion, update, deletion via zero insertion, scalar multiplication, matrix-vector and matrix-matrix multiplication, addition, and dense-format output:
 
 ```bash
-python -m unittest tests.py
+python3 -m unittest tests.py
 ```
 
 ## 📄 License
